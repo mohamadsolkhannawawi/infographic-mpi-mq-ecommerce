@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/",
+            "destination": "/Infografis-Sistem-Iklan-TopAds-Tokopedia.html"
+        }
+    ]
+}
