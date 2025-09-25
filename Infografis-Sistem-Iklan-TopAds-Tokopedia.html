@@ -1,0 +1,2053 @@
+<!-- 
+ 
+Anggota Kelompok KTP Kelas C:
+1. Mohamad Solkhan Nawawi (24060123120020)
+2. Muhamad Sahal Annabil (24060123130088)
+3. Ivan Pratomo Soelistio (24060123120011)
+4. Gladys Paramadani Hersaputri (24060123140177)
+5. Moh Yusril Nur Syabani (24060123140181) 
+
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sistem Iklan TopAds Tokopedia</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Arial", sans-serif;
+                line-height: 1.6;
+                background: linear-gradient(135deg, #f6f1f1 0%, #19a7ce 100%);
+                color: #333;
+                overflow-x: hidden;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Header */
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+                background: rgba(25, 167, 206, 0.9);
+                backdrop-filter: blur(10px);
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                color: #f6f1f1;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+                color: #f6f1f1;
+                margin-bottom: 10px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                animation: fadeInDown 1s ease-out;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+                color: #f6f1f1;
+                animation: fadeInUp 1s ease-out 0.5s both;
+            }
+
+            /* Section Cards */
+            .section {
+                background: #f6f1f1;
+                margin-bottom: 30px;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                animation: slideInUp 0.8s ease-out;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                color: #333;
+            }
+
+            .section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .section h2 {
+                font-size: 2rem;
+                color: #19a7ce;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .section h3 {
+                font-size: 1.5rem;
+                color: #19a7ce;
+                margin: 20px 0 15px 0;
+            }
+
+            /* Problem Cards */
+            .problem-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                margin: 20px 0;
+            }
+
+            .problem-card {
+                background: linear-gradient(135deg, #e63946 0%, #c8102e 100%);
+                color: #f6f1f1;
+                padding: 25px;
+                border-radius: 15px;
+                text-align: left;
+                transition: transform 0.3s ease;
+                box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+            }
+
+            .problem-card:hover {
+                transform: scale(1.05);
+            }
+
+            .problem-card .icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .problem-card h4 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+                color: #f6f1f1;
+            }
+
+            /* Solution Cards */
+            .solution-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                margin: 20px 0;
+            }
+
+            .solution-card {
+                background: #19a7ce;
+                color: #f6f1f1;
+                padding: 25px;
+                border-radius: 15px;
+                text-align: center;
+                transition: transform 0.3s ease;
+                box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+            }
+
+            .solution-card:hover {
+                transform: scale(1.05);
+            }
+
+            .solution-card .icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+
+            .solution-card h3 {
+                color: #f6f1f1;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .solution-card p {
+                color: #f6f1f1;
+            }
+
+            /* Workflow Steps */
+            .workflow {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .step {
+                display: flex;
+                align-items: center;
+                background: #f6f1f1;
+                padding: 20px;
+                border-radius: 10px;
+                border-left: 5px solid;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                color: #333;
+            }
+
+            .step:hover {
+                background: rgba(25, 167, 206, 0.1);
+                transform: translateX(10px);
+            }
+
+            .step.message-queue {
+                border-left-color: #e63946;
+            }
+
+            .step.mpi {
+                border-left-color: #19a7ce;
+            }
+
+            .step.general {
+                border-left-color: #19a7ce;
+                border-left-width: 5px;
+            }
+
+            .step-number {
+                background: #19a7ce;
+                color: #f6f1f1;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                margin-right: 20px;
+                flex-shrink: 0;
+                font-size: 1.2rem;
+            }
+
+            .step-content h4 {
+                color: #19a7ce;
+                margin-bottom: 10px;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            .step-tech {
+                display: inline-block;
+                background: #19a7ce;
+                color: #f6f1f1;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                margin: 10px 0;
+            }
+
+            .step-tech.mq {
+                background: #e63946;
+                color: #f6f1f1;
+            }
+
+            /* Code Block */
+            .code-block {
+                background: #19a7ce;
+                color: #f6f1f1;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 15px 0;
+                font-family: "Courier New", monospace;
+                overflow-x: auto;
+                position: relative;
+            }
+
+            .code-block::before {
+                content: "CODE";
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                background: rgba(246, 241, 241, 0.2);
+                color: #f6f1f1;
+                padding: 2px 8px;
+                border-radius: 3px;
+                font-size: 0.7rem;
+                border: 1px solid rgba(246, 241, 241, 0.3);
+            }
+
+            /* Comparison Table */
+            .comparison-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background: #f6f1f1;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .comparison-table th {
+                background: #19a7ce;
+                color: #f6f1f1;
+                padding: 15px;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            .comparison-table td {
+                padding: 15px;
+                border-bottom: 1px solid #eee;
+                vertical-align: top;
+                color: #333;
+            }
+
+            .comparison-table tr:hover {
+                background: rgba(25, 167, 206, 0.1);
+            }
+
+            /* Highlight boxes */
+            .highlight-box {
+                border-left: 4px solid;
+                padding: 20px;
+                margin: 15px 0;
+                border-radius: 5px;
+            }
+
+            .highlight-box.success {
+                background: rgba(25, 167, 206, 0.1);
+                border-left-color: #19a7ce;
+                color: #333;
+            }
+
+            .highlight-box.error {
+                background: rgba(230, 57, 70, 0.1);
+                border-left-color: #e63946;
+                color: #333;
+            }
+
+            .highlight-box.info {
+                background: rgba(25, 167, 206, 0.1);
+                border-left-color: #19a7ce;
+                color: #333;
+            }
+
+            /* Progress Bar */
+            .progress-bar {
+                background: rgba(246, 241, 241, 0.3);
+                height: 10px;
+                border-radius: 5px;
+                margin: 20px 0;
+                overflow: hidden;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(
+                    90deg,
+                    #f6f1f1,
+                    rgba(246, 241, 241, 0.8)
+                );
+                width: 0%;
+                transition: width 2s ease;
+                border-radius: 5px;
+            }
+
+            /* Animations */
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+
+            .pulse {
+                animation: pulse 2s infinite;
+            }
+
+            /* Interactive Elements */
+            .clickable {
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .clickable:hover {
+                transform: scale(1.02);
+            }
+
+            .hidden-content {
+                display: none;
+                margin-top: 15px;
+                padding: 15px;
+                background: rgba(25, 167, 206, 0.05);
+                border-radius: 8px;
+                border: 1px dashed #19a7ce;
+                color: #333;
+            }
+
+            .toggle-btn {
+                background: #19a7ce;
+                color: #f6f1f1;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .toggle-btn:hover {
+                background: rgba(25, 167, 206, 0.8);
+            }
+
+            /* Statistics Cards */
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .stat-card {
+                background: rgba(25, 167, 206, 0.1);
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                border: 2px solid #19a7ce;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #19a7ce;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                color: #333;
+                margin-top: 5px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 10px;
+                }
+
+                .header h1 {
+                    font-size: 1.8rem;
+                }
+
+                .problem-grid,
+                .solution-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .section h2 {
+                    font-size: 1.5rem;
+                }
+
+                .step {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .step-number {
+                    margin-bottom: 15px;
+                    margin-right: 0;
+                }
+
+                /* Mobile responsive untuk team members */
+                [style*="grid-template-columns: repeat(5, 1fr)"] {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 10px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                [style*="grid-template-columns: repeat(5, 1fr)"] {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+
+            /* REVISED VISUALIZATION STYLES */
+            .viz-wrapper {
+                text-align: center;
+                margin-bottom: 24px;
+            }
+            .viz-btn {
+                font-size: 1.1rem;
+                padding: 10px 24px;
+                border-radius: 8px;
+                background: #19a7ce;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            .viz-btn:hover {
+                background: #156b8c;
+            }
+            .viz-canvas {
+                position: relative;
+                width: 100%;
+                max-width: 900px;
+                height: 400px;
+                margin: 0 auto;
+                background: #f0f5f9;
+                border-radius: 18px;
+                box-shadow: 0 4px 24px rgba(25, 167, 206, 0.08);
+                display: none;
+                overflow: hidden;
+                border: 1px solid #d1e2f0;
+            }
+            .viz-caption {
+                position: absolute;
+                bottom: 18px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 1.1rem;
+                color: #19a7ce;
+                font-weight: bold;
+                transition: opacity 0.5s;
+            }
+            .node {
+                position: absolute;
+                width: 140px;
+                height: 50px;
+                border: 2.5px solid;
+                border-radius: 12px;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: bold;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.4s, border-color 0.4s, color 0.4s,
+                    opacity 0.5s;
+                z-index: 3;
+            }
+
+            /* Node States */
+            .node.node-idle {
+                background: #e9ecef;
+                border-color: #adb5bd;
+                color: #495057;
+            }
+            .node.node-processing {
+                border-color: #48b360;
+                color: #fff;
+                animation: viz-blink-green 1.2s infinite;
+            }
+            .node.node-done {
+                background: #28a745;
+                border-color: #218838;
+                color: #fff;
+            }
+            .node.node-final {
+                background: #ffc107;
+                border-color: #e0a800;
+                color: #212529;
+            }
+
+            @keyframes viz-blink-green {
+                0% {
+                    background-color: #6cce82;
+                }
+                50% {
+                    background-color: #28a745;
+                }
+                100% {
+                    background-color: #6cce82;
+                }
+            }
+
+            /* Visual Elements */
+            .viz-icon {
+                position: absolute;
+                font-size: 1.5rem;
+                z-index: 4;
+                transition: all 1s ease-in-out;
+                opacity: 0;
+            }
+            .viz-line {
+                position: absolute;
+                height: 3px;
+                background-color: #19a7ce;
+                transform-origin: left center;
+                transition: transform 0.5s ease-out;
+                z-index: 2;
+            }
+            .viz-line.reduce-color {
+                background-color: #28a745;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>🚀 Dari Tsunami Trafik ke Lelang Milidetik</h1>
+                <p>
+                    Studi Kasus Arsitektur Dual-Teknologi di Balik Sistem Iklan
+                    TopAds Tokopedia
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Problem Introduction -->
+            <div class="section">
+                <h2>⚠️ Masalah Utama di Balik TopAds Tokopedia</h2>
+                <p
+                    style="
+                        font-size: 1.1rem;
+                        margin-bottom: 25px;
+                        text-align: justify;
+                    "
+                >
+                    <strong>TopAds Tokopedia</strong> menghadapi dua tantangan
+                    besar yang saling bertentangan dan harus diselesaikan secara
+                    bersamaan. Bayangkan situasi di mana jutaan pengguna mencari
+                    produk di platform yang sama, sementara sistem harus
+                    memberikan hasil iklan yang tepat dalam hitungan milidetik.
+                    Ini adalah <strong>paradoks teknologi</strong> yang
+                    membutuhkan solusi canggih.
+                </p>
+
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="icon">🌊</div>
+                        <h4>Masalah 1: "Tsunami Traffic" Problem</h4>
+                        <p>
+                            <strong>Situasi:</strong> Pada jam sibuk atau
+                            kampanye besar (Waktu Indonesia Belanja), jutaan
+                            pengguna melakukan pencarian bersamaan.
+                        </p>
+                        <p>
+                            <strong>Dampak:</strong> Jika setiap pencarian
+                            langsung memicu lelang iklan yang berat, server akan
+                            <strong>overwhelmed</strong> dan menyebabkan crash.
+                        </p>
+                        <p>
+                            <strong>Pertanyaan Kritis:</strong> Bagaimana
+                            "menyerap" dan "mengatur" tsunami permintaan ini
+                            agar sistem tetap stabil?
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="icon">⚡</div>
+                        <h4>Masalah 2: "Split-Second Race" Problem</h4>
+                        <p>
+                            <strong>Situasi:</strong> Untuk satu pencarian,
+                            sistem harus menjalankan lelang dari ribuan produk
+                            yang "bertarung" untuk posisi teratas.
+                        </p>
+                        <p>
+                            <strong>Kompleksitas:</strong> Menghitung skor
+                            relevansi berdasarkan kata kunci, reputasi toko,
+                            budget iklan, dan histori klik.
+                        </p>
+                        <p>
+                            <strong>Pertanyaan Kritis:</strong> Bagaimana
+                            menyelesaikan kalkulasi super intensif ini dalam
+                            <strong>&lt; 100 milisekon</strong>?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <p>
+                        <strong>💡 Insight Penting:</strong> Kedua masalah ini
+                        <strong
+                            >tidak bisa diselesaikan oleh satu teknologi</strong
+                        >
+                        saja. Dibutuhkan
+                        <strong>sinergi dua teknologi</strong> dengan
+                        spesialisasi berbeda:
+                        <strong>Message Queue</strong> untuk mengatasi tsunami
+                        traffic, dan <strong>MPI</strong> untuk mengakselerasi
+                        komputasi real-time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="section">
+                <h2>📊 Skala Tantangan TopAds</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">
+                            Pencarian per jam saat peak time
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100ms</div>
+                        <div class="stat-label">
+                            Target waktu respons maksimal
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">
+                            Iklan yang dianalisis per pencarian
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Target uptime sistem</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analogy Section -->
+            <div class="section">
+                <h2>
+                    🍽️ Analogi Utama: "Dapur Restoran Bintang Michelin saat Jam
+                    Sibuk"
+                </h2>
+                <p style="margin-bottom: 25px">
+                    Untuk memahami kompleksitas TopAds, bayangkan sebuah
+                    <strong>restoran bintang Michelin</strong> yang harus
+                    melayani ratusan tamu secara bersamaan. Setiap hidangan
+                    membutuhkan presisi tinggi dan harus disajikan dalam waktu
+                    yang tepat.
+                </p>
+
+                <div class="solution-grid">
+                    <div class="solution-card pulse">
+                        <div class="icon">👨‍💼</div>
+                        <h3>Message Queue</h3>
+                        <p>
+                            <strong>"Manajer Restoran & Sistem Antrian"</strong>
+                        </p>
+                        <p>
+                            Bertugas menerima pesanan dari ratusan tamu,
+                            mencatat dengan rapi di antrian (kertas pesanan),
+                            mencegah dapur kewalahan, dan memberikan pesanan ke
+                            dapur satu per satu secara teratur.
+                        </p>
+                        <p>
+                            <em
+                                >Spesialisasi: Mengelola volume tinggi dengan
+                                stabil</em
+                            >
+                        </p>
+                    </div>
+                    <div class="solution-card pulse">
+                        <div class="icon">👨‍🍳</div>
+                        <h3>MPI (Message Passing Interface)</h3>
+                        <p><strong>"Tim Koki Spesialis"</strong></p>
+                        <p>
+                            Tim koki profesional di dapur. Untuk satu pesanan
+                            steak: satu koki memanggang, satu memotong sayuran,
+                            satu membuat saus semuanya bekerja paralel untuk
+                            menghasilkan hidangan berkualitas tinggi dengan
+                            kecepatan maksimal.
+                        </p>
+                        <p>
+                            <em>Spesialisasi: Komputasi paralel super cepat</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Section -->
+            <div class="section">
+                <h2>
+                    🔄 Alur Kerja Sistem TopAds: Dari Pencarian hingga Iklan
+                    Tampil
+                </h2>
+                <div class="workflow">
+                    <div class="viz-wrapper">
+                        <button id="start-visualization-btn" class="viz-btn">
+                            ▶️ Mulai Visualisasi Alur
+                        </button>
+                    </div>
+                    <div id="visualization-canvas" class="viz-canvas">
+                        <!-- Caption for steps -->
+                        <div id="visualization-caption" class="viz-caption">
+                            Klik tombol untuk memulai
+                        </div>
+
+                        <!-- Lines -->
+                        <div id="scatter-lines">
+                            <div id="line-scatter-1" class="viz-line"></div>
+                            <div id="line-scatter-2" class="viz-line"></div>
+                            <div id="line-scatter-3" class="viz-line"></div>
+                        </div>
+                        <div id="reduce-lines">
+                            <div
+                                id="line-reduce-1"
+                                class="viz-line reduce-color"
+                            ></div>
+                            <div
+                                id="line-reduce-2"
+                                class="viz-line reduce-color"
+                            ></div>
+                            <div
+                                id="line-reduce-3"
+                                class="viz-line reduce-color"
+                            ></div>
+                        </div>
+
+                        <!-- Nodes -->
+                        <div
+                            id="node-mq"
+                            class="node node-idle"
+                            style="left: 100px; top: 80px"
+                        >
+                            Message Queue
+                        </div>
+                        <div
+                            id="node-master"
+                            class="node node-idle"
+                            style="left: 380px; top: 80px"
+                        >
+                            Master Node
+                        </div>
+                        <div
+                            id="node-ui"
+                            class="node node-idle"
+                            style="left: 660px; top: 80px"
+                        >
+                            UI
+                        </div>
+
+                        <!-- Worker Nodes with absolute positioning -->
+                        <div
+                            id="node-worker-1"
+                            class="node node-idle"
+                            style="left: 150px; top: 280px"
+                        >
+                            Worker 1
+                        </div>
+                        <div
+                            id="node-worker-2"
+                            class="node node-idle"
+                            style="left: 380px; top: 280px"
+                        >
+                            Worker 2
+                        </div>
+                        <div
+                            id="node-worker-3"
+                            class="node node-idle"
+                            style="left: 610px; top: 280px"
+                        >
+                            Worker 3
+                        </div>
+
+                        <!-- Icons -->
+                        <div id="request-icons">
+                            <div class="viz-icon" style="left: 20px; top: 90px">
+                                📦
+                            </div>
+                            <div
+                                class="viz-icon"
+                                style="left: 10px; top: 110px"
+                            >
+                                📦
+                            </div>
+                            <div class="viz-icon" style="left: 30px; top: 70px">
+                                📦
+                            </div>
+                        </div>
+                        <div
+                            id="trophy-icon"
+                            class="viz-icon"
+                            style="opacity: 0"
+                        >
+                            🏆
+                        </div>
+                    </div>
+
+                    <div
+                        class="step general clickable"
+                        onclick="toggleDetails('step1')"
+                    >
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Tsunami Permintaan Datang</h4>
+                            <span class="step-tech mq"
+                                >Message Queue Active</span
+                            >
+                            <p>
+                                👤 Jutaan pengguna mencari "sepatu lari" secara
+                                bersamaan. Permintaan tidak langsung ke "dapur",
+                                melainkan dicatat oleh "manajer restoran"
+                                (Message Queue).
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step1">
+                        <p>
+                            <strong
+                                >Konsep Asinkron & Producer-Consumer:</strong
+                            >
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Producer:</strong> Jutaan user yang
+                                melakukan pencarian bersamaan
+                            </li>
+                            <li>
+                                <strong>Message Queue:</strong> Berperan sebagai
+                                buffer yang menyimpan semua permintaan dalam
+                                antrian
+                            </li>
+                            <li>
+                                <strong>Consumer:</strong> Ad Service yang
+                                mengambil permintaan satu per satu untuk
+                                diproses
+                            </li>
+                        </ul>
+                        <p>
+                            Sistem dapat menerima 100,000+ permintaan per detik
+                            tanpa crash karena tidak langsung memproses,
+                            melainkan menyimpan terlebih dahulu.
+                        </p>
+                    </div>
+
+                    <div
+                        class="step message-queue clickable"
+                        onclick="toggleDetails('step2')"
+                    >
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Satu Pesanan Masuk ke Dapur</h4>
+                            <span class="step-tech">MPI Preparation</span>
+                            <p>
+                                Ad Service (Consumer) mengambil satu permintaan
+                                dari antrian. Kini saatnya "Tim Koki" (MPI)
+                                mulai bekerja untuk satu lelang iklan.
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step2">
+                        <div class="code-block">
+                            // Contoh Data Permintaan yang Diproses { "user_id":
+                            "user_12345", "search_query": "sepatu lari",
+                            "location": "Jakarta", "user_profile":
+                            "frequent_shopper", "timestamp":
+                            "2024-01-15T10:30:00Z" }
+                        </div>
+                        <p>
+                            Sistem mengambil data lengkap user dan query,
+                            kemudian menyiapkan daftar kandidat iklan yang
+                            relevan (bisa mencapai 50,000+ iklan produk).
+                        </p>
+                    </div>
+
+                    <div
+                        class="step mpi clickable"
+                        onclick="toggleDetails('step3')"
+                    >
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Resep Dibagi-bagi (MPI_Scatter)</h4>
+                            <span class="step-tech">MPI Scatter Phase</span>
+                            <p>
+                                Master Chef (Master Node) membagi daftar 50,000
+                                kandidat iklan ke 100 koki junior (Worker
+                                Nodes). Setiap koki mendapat 500 iklan untuk
+                                dihitung skornya.
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step3">
+                        <div class="code-block">
+                            // Pseudo-code MPI_Scatter MPI_Init(); if (rank ==
+                            MASTER) { // Bagi 50,000 iklan ke 100 worker nodes
+                            ads_per_worker = total_ads / num_workers; // 500
+                            iklan per worker MPI_Scatter(all_ads,
+                            ads_per_worker, MPI_ADS_TYPE, local_ads,
+                            ads_per_worker, MPI_ADS_TYPE, MASTER,
+                            MPI_COMM_WORLD); }
+                        </div>
+                        <p>
+                            <strong>Strategi Pembagian:</strong> Setiap worker
+                            node mendapat subset iklan yang seimbang berdasarkan
+                            kategori dan kompleksitas perhitungan untuk
+                            memastikan load balancing yang optimal.
+                        </p>
+                    </div>
+
+                    <div
+                        class="step mpi clickable"
+                        onclick="toggleDetails('step4')"
+                    >
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Memasak Secara Paralel (Komputasi Paralel)</h4>
+                            <span class="step-tech"
+                                >MPI Parallel Computing</span
+                            >
+                            <p>
+                                Semua 100 koki bekerja serentak menghitung skor
+                                iklan. Inilah inti
+                                <strong>paralelisme</strong> yang mengubah 50
+                                detik menjadi 0.5 detik!
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step4">
+                        <p>
+                            <strong
+                                >Formula Skor Iklan (dijalankan
+                                paralel):</strong
+                            >
+                        </p>
+                        <div class="code-block">
+                            // Setiap worker menghitung skor untuk iklannya for
+                            (ad in local_ads) { relevance_score =
+                            calculate_relevance(ad, user_query); bid_score =
+                            ad.bid_amount * bid_multiplier; quality_score =
+                            ad.shop_rating * ad.ctr_history; final_score =
+                            (relevance_score * 0.4) + (bid_score * 0.3) +
+                            (quality_score * 0.3); local_results.add({ad.id,
+                            final_score}); }
+                        </div>
+                        <p>
+                            <strong>Kecepatan Paralel:</strong> Yang tadinya
+                            butuh 50,000 × 1ms = 50 detik (sequential), kini
+                            hanya butuh 500 × 1ms = 0.5 detik (paralel dengan
+                            100 workers)!
+                        </p>
+                    </div>
+
+                    <div
+                        class="step mpi clickable"
+                        onclick="toggleDetails('step5')"
+                    >
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Hidangan Terbaik Dipilih (MPI_Reduce)</h4>
+                            <span class="step-tech">MPI Reduce Phase</span>
+                            <p>
+                                Master Chef mengumpulkan hasil skor dari semua
+                                koki, lalu memilih 5 iklan dengan skor tertinggi
+                                sebagai pemenang lelang.
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step5">
+                        <div class="code-block">
+                            // MPI_Reduce untuk mengumpulkan dan memilih
+                            pemenang MPI_Gather(local_top_ads, top_k_size,
+                            MPI_SCORE_TYPE, all_top_ads, top_k_size,
+                            MPI_SCORE_TYPE, MASTER, MPI_COMM_WORLD); if (rank ==
+                            MASTER) { // Sort semua hasil dan ambil top 5
+                            sort(all_top_ads, descending_by_score); winning_ads
+                            = all_top_ads.take(5); // Kirim hasil kembali ke
+                            Message Queue send_to_queue(winning_ads,
+                            "ad_results_topic"); }
+                        </div>
+                        <p>
+                            <strong>Optimasi Final:</strong> Master node tidak
+                            hanya mengambil top 5 global, tetapi juga
+                            mempertimbangkan diversity (kategori berbeda) dan
+                            posisi optimal untuk user experience.
+                        </p>
+                    </div>
+
+                    <div
+                        class="step general clickable"
+                        onclick="toggleDetails('step6')"
+                    >
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Iklan Disajikan ke User</h4>
+                            <span class="step-tech mq"
+                                >Message Queue Return</span
+                            >
+                            <p>
+                                🎨 Hasil lelang dikemas rapi dan dikirim kembali
+                                melalui Message Queue ke Frontend untuk
+                                ditampilkan kepada user.
+                            </p>
+                            <button class="toggle-btn">Lihat Detail</button>
+                        </div>
+                    </div>
+                    <div class="hidden-content" id="step6">
+                        <p><strong>Final Pipeline:</strong></p>
+                        <ul>
+                            <li>
+                                MPI Master mengirim 5 iklan pemenang ke Message
+                                Queue topic "ad_results"
+                            </li>
+                            <li>
+                                Frontend Consumer mengambil hasil dari queue
+                            </li>
+                            <li>
+                                Iklan dirender dan ditampilkan di posisi
+                                strategis halaman pencarian
+                            </li>
+                            <li>
+                                User melihat iklan yang relevan dalam waktu
+                                total &lt; 100ms!
+                            </li>
+                        </ul>
+                        <p>
+                            <strong>Total Waktu Proses:</strong> Dari pencarian
+                            hingga iklan tampil hanya membutuhkan 50-80
+                            milisekon!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="section">
+                <h2>
+                    📊 Perbandingan Detail: Message Queue vs MPI dalam TopAds
+                </h2>
+                <div
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 40px;
+                        justify-content: center;
+                        margin-bottom: 40px;
+                    "
+                >
+                    <div style="flex: 1; min-width: 320px; max-width: 500px">
+                        <h3
+                            style="
+                                text-align: center;
+                                margin-bottom: 10px;
+                                color: #193a56;
+                            "
+                        >
+                            Waktu Proses Lelang untuk 50.000 Iklan
+                        </h3>
+                        <canvas id="barChart" height="300"></canvas>
+                    </div>
+                    <div style="flex: 1; min-width: 320px; max-width: 500px">
+                        <h3
+                            style="
+                                text-align: center;
+                                margin-bottom: 10px;
+                                color: #193a56;
+                            "
+                        >
+                            Lonjakan Pencarian vs. Kemampuan Proses Sistem
+                        </h3>
+                        <canvas id="lineChart" height="300"></canvas>
+                    </div>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Message Queue</th>
+                            <th>MPI (Message Passing Interface)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tujuan Utama</strong></td>
+                            <td>
+                                Mengatasi <strong>tsunami traffic</strong> dan
+                                menjaga stabilitas sistem
+                            </td>
+                            <td>
+                                Mengakselerasi
+                                <strong>komputasi lelang</strong> dengan
+                                paralelisme
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sifat Proses</strong></td>
+                            <td>
+                                <strong>Konkurensi:</strong> Menangani banyak
+                                request bersamaan secara asinkron
+                            </td>
+                            <td>
+                                <strong>Paralelisme:</strong> Membagi satu tugas
+                                besar ke multiple processors
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fokus Masalah</strong></td>
+                            <td>
+                                Mengatasi <strong>volume tinggi</strong> dan
+                                <strong>peak traffic</strong>
+                            </td>
+                            <td>
+                                Mengatasi
+                                <strong>kompleksitas komputasi</strong> dan
+                                <strong>low latency</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dampak Kegagalan</strong></td>
+                            <td>
+                                <strong>Graceful degradation:</strong> Message
+                                bisa di-retry, sistem tetap stabil
+                            </td>
+                            <td>
+                                <strong>All-or-nothing:</strong> Jika satu
+                                worker gagal, seluruh lelang harus diulang
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skalabilitas</strong></td>
+                            <td>
+                                <strong>Horizontal scaling:</strong> Mudah
+                                menambah consumer nodes
+                            </td>
+                            <td>
+                                <strong>Fixed cluster:</strong> Perlu
+                                merencanakan jumlah worker nodes
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metrik Sukses</strong></td>
+                            <td>
+                                Throughput tinggi (requests/second), Zero
+                                message loss
+                            </td>
+                            <td>
+                                Latency rendah (milliseconds), CPU utilization
+                                optimal
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contoh Implementasi</strong></td>
+                            <td>
+                                <code
+                                    >producer.send(message)<br />consumer.poll(timeout)</code
+                                >
+                            </td>
+                            <td>
+                                <code
+                                    >MPI_Scatter(data, workers)<br />MPI_Gather(results,
+                                    master)</code
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Why Both Are Needed -->
+            <div class="section">
+                <h2>🤝 Mengapa Kedua Teknologi Ini Mutlak Diperlukan?</h2>
+
+                <div class="highlight-box error">
+                    <h3>❌ Skenario Tanpa Message Queue:</h3>
+                    <ul>
+                        <li>
+                            <strong>Server Overload:</strong> Sistem crash saat
+                            traffic tinggi karena semua request langsung ke
+                            processing layer
+                        </li>
+                        <li>
+                            <strong>Data Loss:</strong> Request yang datang saat
+                            server restart akan hilang selamanya
+                        </li>
+                        <li>
+                            <strong>Inconsistent Response Time:</strong> User
+                            experience buruk karena loading time tidak
+                            predictable
+                        </li>
+                        <li>
+                            <strong>Cascade Failure:</strong> Kegagalan satu
+                            component merusak seluruh sistem
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box error">
+                    <h3>❌ Skenario Tanpa MPI:</h3>
+                    <ul>
+                        <li>
+                            <strong>Sequential Bottleneck:</strong> Menghitung
+                            50,000 iklan satu per satu butuh 50+ detik
+                        </li>
+                        <li>
+                            <strong>User Abandonment:</strong> User sudah
+                            meninggalkan halaman sebelum iklan muncul
+                        </li>
+                        <li>
+                            <strong>Revenue Loss:</strong> Advertiser tidak
+                            mendapat exposure, platform kehilangan income
+                        </li>
+                        <li>
+                            <strong>Competitive Disadvantage:</strong> Platform
+                            lain dengan sistem lebih cepat akan unggul
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box success">
+                    <h3>✅ Kekuatan Sinergi Message Queue + MPI:</h3>
+                    <ul>
+                        <li>
+                            <strong>Scalable & Fast:</strong> Bisa handle jutaan
+                            request dengan response time konsisten &lt;100ms
+                        </li>
+                        <li>
+                            <strong>Fault Tolerant:</strong> Sistem tetap
+                            berjalan meski ada component failure
+                        </li>
+                        <li>
+                            <strong>Resource Efficient:</strong> CPU dan memory
+                            digunakan optimal tanpa waste
+                        </li>
+                        <li>
+                            <strong>Business Impact:</strong> Higher ad revenue,
+                            better user experience, competitive advantage
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technical Architecture -->
+            <div class="section">
+                <h2>🏗️ Arsitektur Teknis: Bagaimana Keduanya Berintegrasi</h2>
+
+                <div
+                    style="
+                        background: rgba(25, 167, 206, 0.1);
+                        padding: 25px;
+                        border-radius: 10px;
+                        margin: 20px 0;
+                    "
+                >
+                    <h4 style="color: #19a7ce; margin-bottom: 15px">
+                        🔄 Flow Integrasi Lengkap:
+                    </h4>
+                    <ol style="line-height: 2">
+                        <li>
+                            <strong
+                                >User Request → Load Balancer → Message Queue
+                                Producer</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Message Queue → Topic Partitioning → Consumer
+                                Groups</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Consumer → MPI Master Node
+                                Initialization</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >MPI Master → Worker Node Distribution
+                                (MPI_Scatter)</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Parallel Processing → Score Computation Across
+                                All Workers</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Result Gathering → MPI_Reduce → Top Ads
+                                Selection</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Results → Message Queue Producer → Response
+                                Topic</strong
+                            >
+                        </li>
+                        <li>
+                            <strong
+                                >Frontend Consumer → User Interface
+                                Rendering</strong
+                            >
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5-10x</div>
+                        <div class="stat-label">
+                            Peningkatan throughput dengan Message Queue
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100x</div>
+                        <div class="stat-label">
+                            Percepatan komputasi dengan MPI paralel
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.99%</div>
+                        <div class="stat-label">
+                            System availability dengan fault tolerance
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50-80ms</div>
+                        <div class="stat-label">
+                            End-to-end response time rata-rata
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="section">
+                <h2>
+                    🏆 Kesimpulan: Simbiosis Sempurna untuk E-commerce Modern
+                </h2>
+
+                <div class="highlight-box info">
+                    <p>
+                        <strong>TopAds Tokopedia</strong> membuktikan bahwa
+                        tantangan teknologi modern tidak bisa diselesaikan
+                        dengan <strong>silver bullet</strong> tunggal.
+                        Diperlukan <strong>orkestrasi teknologi</strong> yang
+                        cerdas:
+                    </p>
+
+                    <div style="margin: 20px 0">
+                        <p>
+                            🔄 <strong>Message Queue</strong> menyelesaikan
+                            <strong>"Tsunami Problem"</strong>:
+                        </p>
+                        <ul style="margin-left: 20px">
+                            <li>Menyerap lonjakan traffic tanpa crash</li>
+                            <li>Menjamin zero message loss</li>
+                            <li>Memberikan predictable response time</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 20px 0">
+                        <p>
+                            ⚡ <strong>MPI</strong> menyelesaikan
+                            <strong>"Split-Second Race Problem"</strong>:
+                        </p>
+                        <ul style="margin-left: 20px">
+                            <li>
+                                Mengakselerasi komputasi kompleks dengan
+                                paralelisme
+                            </li>
+                            <li>
+                                Memastikan iklan relevan tampil dalam waktu
+                                real-time
+                            </li>
+                            <li>Maksimalkan revenue dan user satisfaction</li>
+                        </ul>
+                    </div>
+
+                    <p
+                        style="
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                            text-align: center;
+                            margin-top: 25px;
+                            color: #19a7ce;
+                        "
+                    >
+                        "Keduanya tidak saling menggantikan, melainkan saling
+                        melengkapi untuk menciptakan sistem e-commerce yang
+                        world-class!"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Team Members Section -->
+            <div class="section">
+                <h2>👥 Anggota Kelompok</h2>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: 15px;
+                        margin: 20px 0;
+                        justify-items: center;
+                    "
+                >
+                    <div
+                        style="
+                            background: #19a7ce;
+                            color: #f6f1f1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+                            min-width: 200px;
+                        "
+                    >
+                        <h4 style="font-size: 0.9rem; margin-bottom: 5px">
+                            Mohamad Solkhan Nawawi
+                        </h4>
+                        <p style="margin: 0; opacity: 0.9; font-size: 0.8rem">
+                            24060123120020
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            background: #19a7ce;
+                            color: #f6f1f1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+                            min-width: 200px;
+                        "
+                    >
+                        <h4 style="font-size: 0.9rem; margin-bottom: 5px">
+                            Muhamad Sahal Annabil
+                        </h4>
+                        <p style="margin: 0; opacity: 0.9; font-size: 0.8rem">
+                            24060123130088
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            background: #19a7ce;
+                            color: #f6f1f1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+                            min-width: 200px;
+                        "
+                    >
+                        <h4 style="font-size: 0.9rem; margin-bottom: 5px">
+                            Ivan Pratomo Soelistio
+                        </h4>
+                        <p style="margin: 0; opacity: 0.9; font-size: 0.8rem">
+                            24060123120011
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            background: #19a7ce;
+                            color: #f6f1f1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+                            min-width: 200px;
+                        "
+                    >
+                        <h4 style="font-size: 0.9rem; margin-bottom: 5px">
+                            Gladys Paramadani Hersaputri
+                        </h4>
+                        <p style="margin: 0; opacity: 0.9; font-size: 0.8rem">
+                            24060123140177
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            background: #19a7ce;
+                            color: #f6f1f1;
+                            padding: 15px;
+                            border-radius: 10px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(25, 167, 206, 0.3);
+                            min-width: 200px;
+                        "
+                    >
+                        <h4 style="font-size: 0.9rem; margin-bottom: 5px">
+                            Moh Yusril Nur Syabani
+                        </h4>
+                        <p style="margin: 0; opacity: 0.9; font-size: 0.8rem">
+                            24060123140181
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("start-visualization-btn").onclick =
+                startVisualization;
+            let vizRunning = false;
+
+            // Helper function for delays
+            const sleep = (ms) =>
+                new Promise((resolve) => setTimeout(resolve, ms));
+
+            // Helper function to connect two nodes with a line
+            function connectNodes(fromElem, toElem, lineElem) {
+                const fromRect = fromElem.getBoundingClientRect();
+                const toRect = toElem.getBoundingClientRect();
+                const canvasRect = fromElem
+                    .closest(".viz-canvas")
+                    .getBoundingClientRect();
+
+                const fromX =
+                    fromRect.left + fromRect.width / 2 - canvasRect.left;
+                const fromY =
+                    fromRect.top + fromRect.height / 2 - canvasRect.top;
+                const toX = toRect.left + toRect.width / 2 - canvasRect.left;
+                const toY = toRect.top + toRect.height / 2 - canvasRect.top;
+
+                const length = Math.sqrt(
+                    Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2)
+                );
+                const angle =
+                    Math.atan2(toY - fromY, toX - fromX) * (180 / Math.PI);
+
+                lineElem.style.width = `${length}px`;
+                lineElem.style.top = `${fromY}px`;
+                lineElem.style.left = `${fromX}px`;
+
+                const rotation = `rotate(${angle}deg)`;
+                lineElem.dataset.rotation = rotation;
+                lineElem.style.transform = `${rotation} scaleX(0)`;
+            }
+
+            // Function to reset all nodes and lines
+            function resetVisualization(nodes, lines) {
+                for (const key in nodes) {
+                    const node = nodes[key];
+                    if (Array.isArray(node)) {
+                        node.forEach((n) => (n.className = "node node-idle"));
+                    } else {
+                        node.className = "node node-idle";
+                    }
+                }
+                for (const key in lines) {
+                    lines[key].forEach((line) => {
+                        if (line.dataset.rotation) {
+                            line.style.transform = `${line.dataset.rotation} scaleX(0)`;
+                        } else {
+                            line.style.transform = "scaleX(0)";
+                        }
+                    });
+                }
+            }
+
+            async function startVisualization() {
+                if (vizRunning) return;
+                vizRunning = true;
+
+                const canvas = document.getElementById("visualization-canvas");
+                const caption = document.getElementById(
+                    "visualization-caption"
+                );
+                canvas.style.display = "block";
+
+                const nodes = {
+                    mq: document.getElementById("node-mq"),
+                    master: document.getElementById("node-master"),
+                    ui: document.getElementById("node-ui"),
+                    workers: [
+                        document.getElementById("node-worker-1"),
+                        document.getElementById("node-worker-2"),
+                        document.getElementById("node-worker-3"),
+                    ],
+                };
+                const lines = {
+                    scatter: [
+                        document.getElementById("line-scatter-1"),
+                        document.getElementById("line-scatter-2"),
+                        document.getElementById("line-scatter-3"),
+                    ],
+                    reduce: [
+                        document.getElementById("line-reduce-1"),
+                        document.getElementById("line-reduce-2"),
+                        document.getElementById("line-reduce-3"),
+                    ],
+                };
+                const requestIcons = document.querySelectorAll(
+                    "#request-icons .viz-icon"
+                );
+                const trophyIcon = document.getElementById("trophy-icon");
+
+                caption.textContent = "Keadaan Awal: Semua sistem siap.";
+                // Connect lines based on their direction
+                nodes.workers.forEach((worker, i) => {
+                    // Scatter: from master to worker
+                    connectNodes(nodes.master, worker, lines.scatter[i]);
+                    // Reduce: from worker to master
+                    connectNodes(worker, nodes.master, lines.reduce[i]);
+                });
+                resetVisualization(nodes, lines);
+                requestIcons.forEach((icon) => {
+                    icon.style.opacity = "0";
+                    icon.style.transform = "translateX(0px)";
+                });
+                trophyIcon.style.opacity = "0";
+                await sleep(1500);
+
+                caption.textContent =
+                    "Langkah 1: Permintaan masuk ke Message Queue.";
+                nodes.mq.classList.replace("node-idle", "node-processing");
+                requestIcons.forEach((icon, i) => {
+                    icon.style.opacity = "1";
+                    icon.style.transform = `translateX(${80 + i * 10}px)`;
+                });
+                await sleep(1500);
+                nodes.mq.classList.replace("node-processing", "node-done");
+                requestIcons.forEach((icon) => (icon.style.opacity = "0"));
+                await sleep(1000);
+
+                caption.textContent =
+                    "Langkah 2: Master Node mempersiapkan lelang.";
+                const singleIcon = requestIcons[0];
+                singleIcon.style.transition = "all 0.8s ease-in-out";
+                singleIcon.style.opacity = "1";
+                singleIcon.style.transform = "translateX(350px)";
+                await sleep(500);
+                nodes.master.classList.replace("node-idle", "node-processing");
+                await sleep(800);
+                singleIcon.style.opacity = "0";
+                await sleep(1000);
+                nodes.master.classList.replace("node-processing", "node-done");
+                await sleep(500);
+
+                // --- Step 3: Scatter (Slower) ---
+                caption.textContent =
+                    "Langkah 3: Tugas disebar ke semua Worker Node.";
+                lines.scatter.forEach(
+                    (line) =>
+                        (line.style.transform = `${line.dataset.rotation} scaleX(1)`)
+                );
+                await sleep(1500); // Increased duration for visibility
+
+                // --- Step 4: Parallel Compute ---
+                caption.textContent = "Langkah 4: Komputasi Paralel...";
+                nodes.workers.forEach((w) =>
+                    w.classList.replace("node-idle", "node-processing")
+                );
+                await sleep(500); // Short delay to see workers start
+                lines.scatter.forEach(
+                    (line) =>
+                        (line.style.transform = `${line.dataset.rotation} scaleX(0)`)
+                ); // Hide lines after workers start
+                await sleep(3500); // Remainder of the 4-second compute time
+                nodes.workers.forEach((w) =>
+                    w.classList.replace("node-processing", "node-done")
+                );
+                await sleep(1000);
+
+                // --- Step 5: Reduce ---
+                caption.textContent =
+                    "Langkah 5: Hasil dikumpulkan dan pemenang dipilih.";
+                lines.reduce.forEach(
+                    (line) =>
+                        (line.style.transform = `${line.dataset.rotation} scaleX(1)`)
+                );
+                nodes.master.classList.replace("node-done", "node-processing");
+                await sleep(1500); // Increased duration
+                lines.reduce.forEach(
+                    (line) =>
+                        (line.style.transform = `${line.dataset.rotation} scaleX(0)`)
+                );
+                await sleep(500);
+                nodes.master.classList.replace("node-processing", "node-final");
+                await sleep(1000);
+
+                // --- Step 6: Present Result ---
+                caption.textContent =
+                    "Langkah 6: Hasil pemenang disajikan ke UI.";
+                trophyIcon.style.left = "450px";
+                trophyIcon.style.top = "95px";
+                trophyIcon.style.transition = "all 1.5s ease-in-out";
+                trophyIcon.style.opacity = "1";
+                trophyIcon.style.transform = "translateX(230px) scale(1.5)";
+                await sleep(1500);
+                nodes.ui.classList.replace("node-idle", "node-done");
+                await sleep(2000);
+
+                // --- Final Reset ---
+                caption.textContent =
+                    "Animasi Selesai. Kembali ke keadaan awal.";
+                trophyIcon.style.opacity = "0";
+                resetVisualization(nodes, lines);
+                nodes.ui.className = "node node-idle";
+                await sleep(1000);
+                caption.textContent = "Klik tombol untuk memulai lagi.";
+
+                vizRunning = false;
+            }
+
+            // Progress bar animation
+            window.addEventListener("load", function () {
+                setTimeout(() => {
+                    document.getElementById("progressFill").style.width =
+                        "100%";
+                }, 500);
+            });
+
+            // Toggle details functionality
+            function toggleDetails(stepId) {
+                const element = document.getElementById(stepId);
+                const button = event.currentTarget.querySelector(".toggle-btn");
+
+                if (
+                    element.style.display === "none" ||
+                    element.style.display === ""
+                ) {
+                    element.style.display = "block";
+                    button.textContent = "Sembunyikan Detail";
+                    element.style.animation = "fadeInUp 0.3s ease-out";
+                } else {
+                    element.style.display = "none";
+                    button.textContent = "Lihat Detail";
+                }
+            }
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationDelay = "0s";
+                            entry.target.style.animationFillMode = "both";
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+            );
+
+            document.querySelectorAll(".section").forEach((section) => {
+                observer.observe(section);
+            });
+
+            document.querySelectorAll(".step").forEach((step) => {
+                step.addEventListener("mouseenter", function () {
+                    this.style.transform = "translateX(10px) scale(1.02)";
+                });
+
+                step.addEventListener("mouseleave", function () {
+                    this.style.transform = "translateX(0) scale(1)";
+                });
+            });
+
+            document
+                .querySelectorAll(".comparison-table tbody tr")
+                .forEach((row) => {
+                    row.addEventListener("mouseenter", function () {
+                        this.style.backgroundColor = "rgba(25, 167, 206, 0.1)";
+                        this.style.transform = "scale(1.01)";
+                        this.style.color = "#333";
+                    });
+
+                    row.addEventListener("mouseleave", function () {
+                        this.style.backgroundColor = "";
+                        this.style.transform = "scale(1)";
+                        this.style.color = "";
+                    });
+                });
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                const header = document.querySelector(".header");
+                if (header) {
+                    header.style.transform = `translateY(${rate}px)`;
+                }
+            });
+
+            let clickCount = 0;
+            document.addEventListener("click", () => {
+                clickCount++;
+                if (clickCount === 15) {
+                    alert(
+                        "🎉 Excellent! Anda telah mengeksplorasi seluruh infografis dengan sangat baik!"
+                    );
+                }
+            });
+
+            window.addEventListener("load", function () {
+                const statNumbers = document.querySelectorAll(".stat-number");
+                statNumbers.forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.style.animation = "pulse 1s ease-in-out";
+                    }, index * 200);
+                });
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Bar Chart: Waktu Proses Lelang untuk 50.000 Iklan
+            const barChartCtx = document
+                .getElementById("barChart")
+                .getContext("2d");
+            const barChart = new Chart(barChartCtx, {
+                type: "bar",
+                data: {
+                    labels: [
+                        "Single Server (Sequential)",
+                        "64-Node MPI Cluster (Parallel)",
+                    ],
+                    datasets: [
+                        {
+                            label: "Waktu Proses Lelang",
+                            data: [2500, 45],
+                            backgroundColor: ["#FFD166", "#118AB2"],
+                            borderColor: ["#FFD166", "#118AB2"],
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.parsed.y} milidetik`;
+                                },
+                            },
+                        },
+                    },
+                    onClick: (e, elements) => {
+                        if (elements.length > 0) {
+                            const idx = elements[0].index;
+                            const label = barChart.data.labels[idx];
+                            const value = barChart.data.datasets[0].data[idx];
+                            alert(
+                                label +
+                                    " membutuhkan waktu " +
+                                    value +
+                                    " milidetik untuk lelang 50.000 iklan."
+                            );
+                        }
+                    },
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: "Waktu Proses (milidetik)",
+                            },
+                            beginAtZero: true,
+                            max: 2600,
+                        },
+                    },
+                },
+            });
+
+            // Line Chart: Lonjakan Pencarian vs. Kemampuan Proses Sistem
+            const lineChartCtx = document
+                .getElementById("lineChart")
+                .getContext("2d");
+            const lineChart = new Chart(lineChartCtx, {
+                type: "line",
+                data: {
+                    labels: [
+                        "-5 min",
+                        "Puncak Trafik",
+                        "+1 min",
+                        "+2 min",
+                        "+5 min",
+                        "+10 min",
+                        "+15 min",
+                    ],
+                    datasets: [
+                        {
+                            label: "Permintaan Pencarian Masuk per Detik",
+                            data: [1000, 50000, 35000, 20000, 8000, 2000, 1000],
+                            backgroundColor: "rgba(230,57,70,0.2)",
+                            borderColor: "#E63946",
+                            pointBackgroundColor: "#E63946",
+                            fill: true,
+                            tension: 0.4,
+                        },
+                        {
+                            label: "Permintaan Diproses oleh Ad Service",
+                            data: [1000, 3000, 3000, 3000, 3000, 3000, 3000],
+                            backgroundColor: "rgba(25,167,206,0.2)",
+                            borderColor: "#19A7CE",
+                            pointBackgroundColor: "#19A7CE",
+                            fill: false,
+                            tension: 0.4,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: "top" },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function (context) {
+                                    return `${
+                                        context.dataset.label
+                                    }: ${context.parsed.y.toLocaleString()} pencarian/detik`;
+                                },
+                            },
+                        },
+                    },
+                    onClick: (e, elements) => {
+                        if (elements.length > 0) {
+                            const idx = elements[0].datasetIndex;
+                            const pointIdx = elements[0].index;
+                            const label = lineChart.data.datasets[idx].label;
+                            const value =
+                                lineChart.data.datasets[idx].data[pointIdx];
+                            const waktu = lineChart.data.labels[pointIdx];
+                            alert(
+                                label +
+                                    " pada " +
+                                    waktu +
+                                    ": " +
+                                    value.toLocaleString() +
+                                    " pencarian/detik."
+                            );
+                        }
+                    },
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: "Jumlah Pencarian per Detik",
+                            },
+                            beginAtZero: true,
+                            max: 52000,
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
